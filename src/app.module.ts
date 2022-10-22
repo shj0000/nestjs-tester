@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FacebookController } from './facebook/facebook.controller';
 import { TestController } from './test/test.controller';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { TestController } from './test/test.controller';
       database: 'test',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-    }),],
+    }),
+    UserModule,],
   controllers: [AppController, FacebookController, TestController],
   providers: [AppService],
 })
