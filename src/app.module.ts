@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { FacebookController } from './facebook/facebook.controller';
 import { TestController } from './test/test.controller';
 import { UserModule } from './user/user.module';
+import { BoardModule } from './board/board.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { UserModule } from './user/user.module';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    BoardModule,
     UserModule,
     HttpModule.register({
       timeout: 5000,
